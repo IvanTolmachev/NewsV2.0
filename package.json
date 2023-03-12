@@ -1,11 +1,11 @@
 {
-  "name": "news-project-n",
+  "name": "news-v2.0",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://IvanTolmachev.github.io/NewsProjectN",
+  "homepage": "https://IvanTolmachev.github.io/NewsV2.0",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /NewsProjectN/"
+    "build": "parcel build src/*.html --public-url /NewsV2.0/"
   },
   "repository": {
     "type": "git",
