@@ -10,6 +10,8 @@ const apiKey = 'ac97801f712add3fe97dbc6a96855cd7';
 
 import wIcon from '../images/wether-icons/*.webp';
 
+// Обновления элементов HTML
+
 async function updateWeatherInfo(weatherData) {
   weatherTemp.textContent = `${Math.round(weatherData.main.temp)}°C`;
   weatherCond.textContent = weatherData.weather[0].description;
@@ -27,6 +29,7 @@ async function updateWeatherInfo(weatherData) {
   weatherIcon.setAttribute('src', urlIcons);
 }
 
+// Получение координат пользователя
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getWeatherData, errorCallback);
@@ -38,6 +41,8 @@ function getLocation() {
     console.log('Geolocation is not supported by this browser.');
   }
 }
+
+// Отправка запроса на получение данных о погоде
 function getWeatherData(position) {
   const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   fetch(weatherApiUrl)
@@ -48,6 +53,7 @@ function getWeatherData(position) {
     .catch(error => console.log(error));
 }
 
+// Если геопозиция не определена
 function errorCallback() {
   const urlKyiv = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&units=metric&appid=${apiKey}`;
   fetch(urlKyiv)
@@ -116,6 +122,8 @@ function errorWeekWeatherCallback() {
     .catch(error => console.log(error));
 }
 
+// Получение погоды на неделю
+
 function getWeatherForWeek(position) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 
@@ -176,6 +184,8 @@ function getWeatherForWeek(position) {
       console.log('An error occurred:', error);
     });
 }
+
+// Переключение погоды при нажатии кнопки
 const weekButton = document.querySelector('.weather__week');
 function toggleWeather(e) {
   weatherIcon.classList.toggle('display-none');
@@ -192,4 +202,6 @@ function renameBtn() {
 
 weekButton.addEventListener('click', toggleWeather);
 weekButton.addEventListener('click', renameBtn);
+// Вызов функции для получения данных о погоде
 getLocation();
+// getWeatherForWeek();

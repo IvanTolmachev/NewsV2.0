@@ -26,3 +26,10 @@ export function paginationAll(n) {
       break;
   }
 }
+
+// const btnsContainer = document.querySelector('.pagination');
+// btnsContainer.addEventListener('click', e => {
+//   const activeBtn = btnsContainer.querySelector('.active');
+//   const pageNum = +activeBtn.dataset.page;
+//   paginationAll(pageNum - 1);
+// });

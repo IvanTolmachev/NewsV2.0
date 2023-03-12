@@ -20,6 +20,8 @@ async function createSearchCards() {
   }
 }
 
+//createSearchCards();
+
 function createMarkup(arr) {
   const markup = arr
     .map(
@@ -63,4 +65,5 @@ function createMarkup(arr) {
       }
     )
     .join('');
+  //   refs.gallery.insertAdjacentHTML('beforeend', markup);
 }

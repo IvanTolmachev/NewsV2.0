@@ -1,4 +1,5 @@
 import axios from 'axios';
+// const API_KEY = 'VPd8ESOXXGRNi6SUHc4QYJMXdqmRVK3K';
 import { KEY } from './api-key';
 import { arrLastData } from './apiNews';
 import { checkRead } from './apiCard';
@@ -100,6 +101,7 @@ export function createMarkup(arr) {
     .join('');
 
   return markup;
+  // refs.gallery.insertAdjacentHTML('beforeend', markup);
 }
 function saveApiData(arrey) {
   arrey.map(({ id, url, title, section, abstract, published_date, media }) => {

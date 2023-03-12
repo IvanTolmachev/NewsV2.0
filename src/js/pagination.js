@@ -38,6 +38,8 @@ paginContainer.addEventListener('click', e => {
     smoothScroll();
     handleButton(e.target);
     makePaginationsBtnMurkUp(valuePage);
+    // createCards(valuePage.curPage);
+
     paginationAll(valuePage.curPage);
     return;
   } else if (!e.target.classList.contains('pg-link')) {
@@ -46,6 +48,8 @@ paginContainer.addEventListener('click', e => {
   smoothScroll();
   valuePage.curPage = parseInt(e.target.dataset.page);
   makePaginationsBtnMurkUp(valuePage);
+  // createCards(valuePage.curPage);
+
   paginationAll(valuePage.curPage);
 });
 

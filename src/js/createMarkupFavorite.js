@@ -10,6 +10,7 @@ const favoriteNews = JSON.parse(localStorage.getItem(STORAGE_KEY_FAVORITE));
 createMarkupFavorite(favoriteNews);
 
 export function createMarkupFavorite(arr) {
+  
   if (!Boolean(favoriteNews)) {
     errorRequest.classList.remove('visually-hidden');
     return;
@@ -45,6 +46,7 @@ export function createMarkupFavorite(arr) {
       </li>`;
     })
     .join('');
+  // favoriteList.insertAdjacentHTML("beforeend", markup);
   favoriteList.innerHTML = markup;
   checkRead(READ_NEWS);
 }
@@ -55,3 +57,4 @@ favoriteList.addEventListener('click', e => {
 
   addRead(e);
 });
+
